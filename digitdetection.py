@@ -6,17 +6,17 @@ import tensorflow as tf
 mnist = tf.keras.datasets.mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
-# model=tf.keras.models.Sequential()
-# model.add(tf.keras.layers.Flatten())
-# model.add(tf.keras.layers.Dense(128,activation=tf.nn.relu))
-# model.add(tf.keras.layers.Dense(128,activation=tf.nn.relu))
-# model.add(tf.keras.layers.Dense(10,activation=tf.nn.softmax))
-# model.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics='accuracy')
-# model.fit(x_train,y_train,epochs=3)
-# model.save('detection.model')
+model=tf.keras.models.Sequential()
+model.add(tf.keras.layers.Flatten())
+model.add(tf.keras.layers.Dense(128,activation=tf.nn.relu))
+model.add(tf.keras.layers.Dense(128,activation=tf.nn.relu))
+model.add(tf.keras.layers.Dense(10,activation=tf.nn.softmax))
+model.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics='accuracy')
+model.fit(x_train,y_train,epochs=3)
+
+model.save('detection.model')
 model = tf.keras.models.load_model('detection.model')
-# x = input("Enter digit to beginning of predicting from:")
-# y = input("Enter digit to show where predictions to end:")
+
 x = 0
 y = 9
 
